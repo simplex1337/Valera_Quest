@@ -1,4 +1,4 @@
-#                                                          Valera_Quest
+# Valera_Quest
 
 # Valera
 	● HP

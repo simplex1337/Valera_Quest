@@ -7,9 +7,9 @@
 	● Cash
 	------------------
 	+ get {HP, MP, ..}
-	+ get_fule_stat
+	+ get_full_stat
 	- set
-	+ if_dead
+	+ dead?
 	
 	
 # Event 

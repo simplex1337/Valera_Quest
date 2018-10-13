@@ -1,15 +1,16 @@
 # Valera_Quest
 
 # Valera
-	● HP
-	● MP
-	● Happiness
-	● Cash
+	● HP 				- Здоровье
+	● MP 				- Алкоголь
+	● Happiness 		- Жизнерадостность
+	● Cash 				- Деньги 
+	● Fatigue 			- Усталость	
 	------------------
 	+ get {HP, MP, ..}
 	+ get_fule_stat
 	- set
-	+ if_dead
+	+ dead?
 	
 	
 # Event 

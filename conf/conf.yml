@@ -1,0 +1,42 @@
+---
+actions:
+
+    name: "Сontemplate nature"
+    Happiness: 1
+    MP: -10
+    Fatigue: 10
+    
+    name: "Drink wine and watch TV series"
+    Happiness: -1
+    MP: 30
+    Fatigue: 5
+    HP: -5 
+    Cash: -20
+    
+    name: "Go to the bar"
+    Happiness: 1
+    MP: 60
+    Fatigue: 40
+    HP: -10
+    Cash: -100
+    
+    name: "Drink with marginal personalities"
+    Happiness: 3
+    HP: -30
+    MP: 90
+    Fatigue: 60
+    Cash: -200
+    
+    name: "Go to the gym" 
+    HP: 20
+    Cash: -100
+    Fatigue: -30
+    Happiness: 5
+    
+    name: "Go to work"
+    Happiness: -2
+    Fatigue: -30
+    Cash: 300
+    
+    
+    

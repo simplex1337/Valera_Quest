@@ -8,7 +8,7 @@
 	● Fatigue 			- Усталость	
 	------------------
 	+ get {HP, MP, ..}
-	+ get_fule_stat
+	+ get_full_stat
 	- set
 	+ dead?
 	

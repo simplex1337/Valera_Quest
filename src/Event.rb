@@ -1,9 +1,10 @@
 class Event
     attr_accessor :description, :baffs
 
-    def initialize(description, baffs)
-        self.description = description
-        self.baffs = baff
+    def initialize(hash)
+        self.description = hash['name']
+        hash.delete 'name'
+        self.baffs = hash
     end
 
     def apply(human)

@@ -1,41 +1,38 @@
 ---
 
 - name: "Сontemplate nature"
-  Happiness: 1
-  MP: -10
-  Fatigue: 10
+  happiness: 1
+  mp: -10
+  fatigue: 10
     
 - name: "Drink wine and watch TV series"
-  Happiness: -1
-  MP: 30
-  Fatigue: 5
-  HP: -5 
-  Cash: -20
+  happiness: -1
+  mp: 30
+  fatigue: 5
+  hp: -5 
+  cash: -20
     
 - name: "Go to the bar"
-  Happiness: 1
-  MP: 60
-  Fatigue: 40
-  HP: -10
-  Cash: -100
+  happiness: 1
+  mp: 60
+  fatigue: 40
+  hp: -10
+  cash: -100
     
 - name: "Drink with marginal personalities"
-  Happiness: 3
-  HP: -30
-  MP: 90
-  Fatigue: 60
-  Cash: -200
+  happiness: 3
+  hp: -30
+  mp: 90
+  fatigue: 60
+  cash: -200
     
 - name: "Go to the gym" 
-  HP: 20
-  Cash: -100
-  Fatigue: -30
-  Happiness: 5
+  hp: 20
+  cash: -100
+  fatigue: -30
+  happiness: 5
     
 - name: "Go to work"
-  Happiness: -2
-  Fatigue: -30
-  Cash: 300
-    
-    
-    
+  happiness: -2
+  fatigue: -30
+  cash: 300

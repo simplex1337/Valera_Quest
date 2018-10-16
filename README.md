@@ -33,3 +33,8 @@
 	● Engine
 	------------
 	+ scan_event
+
+# Gameplay features
+	● if mp, fatigue > 100 => hp = hp - diff
+	● if happiness > 10 => fatigue = fatigue - (diff * 10)
+	● if hp < 0 or happiness < -10 => die

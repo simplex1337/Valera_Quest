@@ -72,12 +72,14 @@ module ValeraQuest
         end
 
         puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
-        event = gets.chomp.to_i 
+        action = gets.chomp.to_i
 
-        case
+        case action
         when 1
-
-          case
+        
+          event = gets.chomp.to_i
+        
+          case event
           when 0..engine.event_list.size - 1 
             engine_doom event
           else
@@ -89,7 +91,7 @@ module ValeraQuest
           puts 'Exit game - 2'
           save_exit = gets.chomp.to_i
 
-          case
+          case save_game
           when '1'
             save_game
           when '2'

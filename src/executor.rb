@@ -14,7 +14,7 @@ class Executor
 		 
 		case rez_menu
 			when 1
-				new_game	
+				new_game
 			
 			when 2
 				load_game
@@ -28,13 +28,29 @@ class Executor
 			
 	end
 	
+	def event_list
+		list = Array.new
+		self.event.each do |event|
+			list.push event.description
+		end
+		list
+	end
+	
+	def engine_doom(number)
+		if number >= event.size then
+			raise 'We dont have ascing event'
+		end
+		p self.engine.
+		self.events.at(number).apply(@engine)
+		p self.engine.
+	
 	def new_game
 		puts 'New Game'
-		engine.initialize
+		self.engine.initialize
 	end
 	
 	def load_game
-		engine.load_valera_state
+		self.engine.load_valera_state
 	end
 	
 	def exit_game
@@ -44,7 +60,7 @@ class Executor
 				
 		case exit_rez
 			when 1
-				engine.save_valera_state
+				self.engine.save_valera_state
 				
 			when 2
 				exit 'Good bay!'
@@ -52,7 +68,7 @@ class Executor
 			else
 				puts 'Input error!'
 		end
-			
+	
 	end
 
 end

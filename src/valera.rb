@@ -48,7 +48,8 @@ class Valera
     end
 
     def get_full_stat
-        
+        Hash["hp" => self.hp, "mp" => self.mp, "happiness" => self.happiness, "cash" => self.cash, 
+                "fatigue" => self.fatigue] 
     end
 
     def isdead?

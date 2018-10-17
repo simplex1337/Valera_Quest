@@ -4,6 +4,7 @@ module ValeraQuest
 
     def initialize
       @engine = Engine.new
+      menu
     end
 
     def menu

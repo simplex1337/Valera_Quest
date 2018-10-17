@@ -7,15 +7,19 @@ class Engine
 
     def initialize
         puts 'Loading events from config...'
-        events_from_file = YAML.load_file '../conf/conf.yml'
+        load_events '../conf/conf.yml'
+        puts 'Born one more freak Valera...'
+        @valerra = Valera.new
+    end
+
+    def load_events(file)
+        events_from_file = YAML.load_file file
         @events Array.new
         events_from_file.each do |line|
             event = Event.new line
             @events.push event
         end
 
-        puts 'Born one more freak Valera...'
-        @valerra = Valera.new
     end
 
     def event_list
@@ -27,7 +31,18 @@ class Engine
     end
 
     def valeras_doom(number)
+        if number >= events.size then
+            raise 'We dont have ascing event'
+        end
+
         self.events.at(number).apply(@valerra)
+    end
+
+    def save_valera_state
+    end
+
+    def load_valera_state
+        valera_state = YAML.load_file '../valera.yml'
     end
 end
 

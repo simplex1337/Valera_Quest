@@ -10,7 +10,17 @@ module ValeraQuest
     end
 
     def menu
+      system 'clear'
       loop {
+        puts '  ___ ___       __                  _______                   __   '
+        puts ' |   Y   .---.-|  .-----.----.---.-|   _   .--.--.-----.-----|  |_ '
+        puts ' |.  |   |  _  |  |  -__|   _|  _  |.  |   |  |  |  -__|__ --|   _|'
+        puts ' |.  |   |___._|__|_____|__| |___._|.  |   |_____|_____|_____|____|'
+        puts ' |:  1   |                         |:  1   |                       '
+        puts '  \:.. ./                          |::..   |                       '
+        puts '   `---''                            `----|:.|                       '
+        puts '                                        `--''                      '
+        puts ''
         puts '1 - New Game'
         puts '2 - Load Game'
         puts '3 - Exit'
@@ -38,7 +48,8 @@ module ValeraQuest
       if number >= engine.event_list.size then
         raise 'We dont have ascing event'
       end
-      self.engine.valeras_doom(number)
+      self.engine.valeras_doom(number)                                                                                        
+                                                                                        
     end
 
     def new_game
@@ -58,11 +69,18 @@ module ValeraQuest
 
     def exit_game
         system 'clear'
-        abort 'Good bye!'
+        puts '  _______                __     _______              __ '
+        puts ' |   _   .-----.-----.--|  |   |   _   \.--.--.-----|  |'
+        puts ' |.  |___|  _  |  _  |  _  |   |.  1   /|  |  |  -__|__|'
+        puts ' |.  |   |_____|_____|_____|   |.  _   \|___  |_____|__|'
+        puts ' |:  1   |                     |:  1    |_____|         '
+        puts ' |::.. . |                     |::.. .  /               '
+        puts ' `-------\'                     `-------\'               '
+        abort ''
     end
 
     def game
-      puts self.engine.valera.get_full_stat    
+      puts self.engine.valera.get_full_stat                                                                                
       spisok = engine.event_list
       loop {
         if !self.engine.valera.is_dead?

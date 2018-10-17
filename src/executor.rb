@@ -68,24 +68,41 @@ module ValeraQuest
     end
     
     def game
-      puts self.valera.get_full_stat
-      puts 'Select event:'
-      event = gets.chomp.to_i      
+      puts self.valera.get_full_stat    
       
       for i in 0..event.size
         puts i ' - ' event_list.list[i]
       end
       
-      puts 'Save the game - s'
-      puts 'Exit game - e'
-      rez_menu = gets.chomp.to_S
+      puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
+      event = gets.chomp.to_i 
       
       case
-        when 's'
-          save_game
-        when 'e'
-          exit_game
-      end
+        when 1
+          
+          case
+            when 0..event_size
+              engine_doom event
+		    else
+              puts 'Input event error!'
+          end
+          
+        when 2
+          puts 'Save the game - 1'
+          puts 'Exit game - 2'
+          save_exit = gets.chomp.to_i
+      
+          case
+            when '1'
+              save_game
+            when '2'
+              exit_game
+          end
+          
+       end
+        
     end
+    
   end
+
 end

@@ -1,5 +1,4 @@
 require 'engine'
-require 'valera'
 
 module ValeraQuest
   class Executor 
@@ -67,8 +66,8 @@ module ValeraQuest
     def game
       puts valera.get_full_stat    
       spisok = engine.event_list
-      for i in 0..event.size
-        puts  spisok[i]
+      for i in 0..engine.event.size
+        puts i ' - ' spisok[i]
       end
 
       puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'

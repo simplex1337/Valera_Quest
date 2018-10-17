@@ -42,6 +42,9 @@ module ValeraQuest
 
     def fatigue=(value)
       @fatigue = self.fatigue + value
+      if (self.fatigue < 0)
+        @fatigue = 0
+      end
       if (self.fatigue > 100)
         @hp = self.hp - (self.fatigue - 100)
         @fatigue = 100

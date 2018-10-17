@@ -57,7 +57,7 @@ module ValeraQuest
       when 1 
         self.engine.save_valera_state
       when 2
-        exit 'Good bay!'
+        abort 'Good bay!'
       else
         puts 'Input error!'
       end
@@ -87,14 +87,14 @@ module ValeraQuest
           end
 
         when 2
-          puts 'Save the game - 1'
-          puts 'Exit game - 2'
-          save_exit = gets.chomp.to_i
+          puts 'Save the game - s'
+          puts 'Exit game - e'
+          save_exit = gets.chomp.to_s
 
           case save_game
-          when '1'
+          when 's'
             save_game
-          when '2'
+          when 'e'
             exit_game
           end
 

@@ -1,9 +1,13 @@
+require 'engine'
+require 'valera'
+
 module ValeraQuest
   class Executor 
     attr_reader :engine, :valera
 
     def initialize
       @engine = Engine.new
+      @valera = Valera.new
       menu
     end
 
@@ -23,14 +27,6 @@ module ValeraQuest
       else
         puts 'Input error!'
       end
-    end
-
-    def event_list
-      list = Array.new
-      self.event.each do |event|
-        list.push event.description
-      end
-      list
     end
 
     def engine_doom(number)
@@ -69,10 +65,10 @@ module ValeraQuest
     end
 
     def game
-      puts self.valera.get_full_stat    
-
+      puts valera.get_full_stat    
+      spisok = engine.event_list
       for i in 0..event.size
-        puts i ' - ' event_list.list[i]
+        puts  spisok[i]
       end
 
       puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'

@@ -49,7 +49,7 @@ module ValeraQuest
     end
 
     def exit_game
-        abort 'Good bay!'
+        abort 'Good bye!'
     end
 
     def game

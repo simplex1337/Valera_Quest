@@ -17,7 +17,8 @@ describe ValeraQuest::Valera do
   describe 'hp=' do
     context 'setter for hp' do
       it 'set hp value' do
-        # todo:write smth
+        unit.hp = -1
+        expect(unit.hp).to be == 922
       end
     end
   end

@@ -43,7 +43,7 @@ module ValeraQuest
       self.engine.load_valera_state
       game
     end
-/^([0-9][0-9])/
+
     def save_game
       self.save_valera_state
     end

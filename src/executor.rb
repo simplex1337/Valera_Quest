@@ -43,24 +43,13 @@ module ValeraQuest
       self.engine.load_valera_state
       game
     end
-
+/^([0-9][0-9])/
     def save_game
       self.save_valera_state
     end
 
     def exit_game
-      puts 'Save Game?'
-      puts '1 - Yes | 2 - No'
-      exit_rez = gets.chomp.to_i
-
-      case exit_rez
-      when 1 
-        self.engine.save_valera_state
-      when 2
         abort 'Good bay!'
-      else
-        puts 'Input error!'
-      end
     end
 
     def game
@@ -71,33 +60,26 @@ module ValeraQuest
           puts "#{i}  -  #{spisok[i]}"
         end
 
-        puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
-        action = gets.chomp.to_i
+        puts 'Select event or Exit - e | Save - s | Check stat Valera - v'
+        
+        action = gets.chomp
 
         case action
-        when 1
-        
-          event = gets.chomp.to_i
-        
-          case event
-          when 0..engine.event_list.size - 1 
-            engine_doom event
-          else
-            puts 'Input event error!'
-          end
+          when /^[0-9]+/
+            engine_doom action.to_i
 
-        when 2
-          puts 'Save the game - s'
-          puts 'Exit game - e'
-          save_exit = gets.chomp.to_s
-
-          case save_game
           when 's'
             save_game
+            
           when 'e'
             exit_game
-          end
-
+            
+          when 'v'
+			puts valera.get_full_stat
+            
+          else
+            puts 'Input event error!'  
+        
         end
 
       }

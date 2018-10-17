@@ -10,21 +10,23 @@ module ValeraQuest
     end
 
     def menu
-      puts '1 - New Game'
-      puts '2 - Load Game'
-      puts '3 - Exit'
-      rez_menu = gets.chomp.to_i
+      loop {
+        puts '1 - New Game'
+        puts '2 - Load Game'
+        puts '3 - Exit'
+        rez_menu = gets.chomp.to_i
 
-      case rez_menu
-      when 1
-        new_game
-      when 2
-        load_game
-      when 3
-        exit_game
-      else
-        puts 'Input error!'
-      end
+        case rez_menu
+          when 1
+            new_game
+          when 2
+            load_game
+          when 3
+            exit_game
+          else
+            puts 'Input error!'
+        end
+      }    
     end
 
     def engine_doom(number)
@@ -40,7 +42,7 @@ module ValeraQuest
 
     def load_game
       self.engine.load_valera_state
-      gamend
+      game
     end
 
     def save_game
@@ -66,16 +68,14 @@ module ValeraQuest
         case action
           when /^[0-9]+/
             engine_doom action.to_i
+            puts self.engine.valera.get_full_stat
 
           when 's'
             save_game
             
           when 'e'
             exit_game
-            
-          when 'v'
-			puts self.engine.valera.get_full_stat
-            
+                
           else
             puts 'Input event error!'  
         

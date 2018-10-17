@@ -35,14 +35,11 @@ class Executor
 		if number >= event.size then
 			raise 'We dont have ascing event'
 		end
-		p self.engine.
-		self.events.at(number).apply(@engine)
-		p self.engine.
+		engine.valeras_doom(number)
 	end
 	
 	def new_game
 		puts 'New Game'
-		self.engine.initialize
 	end
 	
 	def load_game

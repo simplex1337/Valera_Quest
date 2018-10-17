@@ -67,7 +67,7 @@ module ValeraQuest
       puts valera.get_full_stat    
       spisok = engine.event_list
       for i in 0..engine.event_list.size
-        puts #{i} " - " #{spisok[i]}
+        puts "#{i}  -  #{spisok[i]}"
       end
 
       puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'

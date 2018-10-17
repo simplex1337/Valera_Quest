@@ -43,6 +43,7 @@ class Executor
 		p self.engine.
 		self.events.at(number).apply(@engine)
 		p self.engine.
+	end
 	
 	def new_game
 		puts 'New Game'

@@ -57,29 +57,35 @@ module ValeraQuest
       puts self.engine.valera.get_full_stat    
       spisok = engine.event_list
       loop {
-        for i in 0..engine.event_list.size - 1
-          puts "#{i}  -  #{spisok[i]}"
-        end
+        if !self.engine.valera.is_dead?
+          for i in 0..engine.event_list.size - 1
+            puts "#{i}  -  #{spisok[i]}"
+          end
 
-        puts 'Select event or Exit - e | Save - s | Check stat Valera - v'
+          puts 'Select event or Exit - e | Save - s | Check stat Valera - v'
         
-        action = gets.chomp
+          action = gets.chomp
 
-        case action
-          when /^[0-9]+/
-            engine_doom action.to_i
-            puts self.engine.valera.get_full_stat
+          case action
+            when /^[0-9]+/
+              engine_doom action.to_i
+              puts self.engine.valera.get_full_stat
 
-          when 's'
-            save_game
+            when 's'
+              save_game
             
-          when 'e'
-            exit_game
+            when 'e'
+              exit_game
                 
-          else
-            puts 'Input event error!'  
+            else
+              puts 'Input event error!'  
         
-        end
+           end
+          
+          else 
+            puts "Valera dead!"
+            menu
+          end
 
       }
 

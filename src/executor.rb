@@ -9,8 +9,7 @@ module ValeraQuest
     def menu
       puts '1 - New Game'
       puts '2 - Load Game'
-      puts '3 - Save Game'
-      puts '4 - Exit'
+      puts '3 - Exit'
       rez_menu = gets.chomp.to_i
 		
       case rez_menu
@@ -19,8 +18,6 @@ module ValeraQuest
         when 2
           load_game
         when 3
-		  save_game
-        when 4
           exit_game
         else
           puts 'Input error!'
@@ -71,22 +68,41 @@ module ValeraQuest
     end
     
     def game
-      puts self.valera.get_full_stat
-      puts 'Select event:'
-      puts '0 - ' event_list.list(0)
-      puts '1 - ' event_list.list(1)
-      puts '2 - ' event_list.list(2)
-      puts '3 - ' event_list.list(3)
-      puts '4 - ' event_list.list(4)
-      puts '5 - ' event_list.list(5)
-      event = gets.chomp.to_i      
+      puts self.valera.get_full_stat    
       
-      case 
-        when 0..5
-          engine_doom event
-        else
-          puts 'Input error event!'
+      for i in 0..event.size
+        puts i ' - ' event_list.list[i]
       end
+      
+      puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
+      event = gets.chomp.to_i 
+      
+      case
+        when 1
+          
+          case
+            when 0..event_size
+              engine_doom event
+		    else
+              puts 'Input event error!'
+          end
+          
+        when 2
+          puts 'Save the game - 1'
+          puts 'Exit game - 2'
+          save_exit = gets.chomp.to_i
+      
+          case
+            when '1'
+              save_game
+            when '2'
+              exit_game
+          end
+          
+       end
+        
     end
+    
   end
+
 end

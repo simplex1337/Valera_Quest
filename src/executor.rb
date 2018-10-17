@@ -9,23 +9,18 @@ class Executor
 		puts '1 - New Game'
 		puts '2 - Load Game'
 		puts '3 - Exit'
-		
 		rez_menu = gets.chomp.to_i
-		 
+		
 		case rez_menu
 			when 1
 				new_game
-			
 			when 2
 				load_game
-			
 			when 3
 				exit_game
-				
 			else
 				puts 'Input error!'
 		end
-			
 	end
 	
 	def event_list
@@ -62,14 +57,10 @@ class Executor
 		case exit_rez
 			when 1
 				self.engine.save_valera_state
-				
 			when 2
 				exit 'Good bay!'
-				
 			else
 				puts 'Input error!'
 		end
-	
 	end
-
 end

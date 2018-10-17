@@ -4,11 +4,11 @@ require 'valera'
 
 module ValeraQuest
   class Engine
-    attr_reader :events, :valerra
+    attr_reader :events, :valera
 
     def initialize(path='../conf/conf.yml')
       @events = nil
-      @valerra = Valera.new
+      @valera = Valera.new
       if File.exist? path then
         load_events path
       end
@@ -33,11 +33,11 @@ module ValeraQuest
     end
 
     def valeras_doom(number)
-      self.events.at(number).apply(@valerra)
+      self.events.at(number).apply(@valera)
     end
 
     def save_valera_state(file='./valera.yml')
-      states = self.valerra.get_full_stat
+      states = self.valera.get_full_stat
       File.open(file, 'w') { |f| f.write states.to_yaml }
     end
 
@@ -45,8 +45,8 @@ module ValeraQuest
       @valera = Valera.new
       states = YAML.load_file file
       states.each do |stat, value|
-        curr_value = @valerra.send(stat)
-        @valerra.send(stat + '=', value - curr_value)
+        curr_value = @valera.send(stat)
+        @valera.send(stat + '=', value - curr_value)
       end
     end
   end

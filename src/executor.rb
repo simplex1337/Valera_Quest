@@ -29,7 +29,7 @@ module ValeraQuest
     end
 
     def engine_doom(number)
-      if number >= event.size then
+      if number >= engine.event_list.size then
         raise 'We dont have ascing event'
       end
       engine.valeras_doom(number)
@@ -66,8 +66,8 @@ module ValeraQuest
     def game
       puts valera.get_full_stat    
       spisok = engine.event_list
-      for i in 0..engine.event.size
-        puts #{i} ' - ' #{spisok[i]}
+      for i in 0..engine.event_list.size
+        puts #{i} " - " #{spisok[i]}
       end
 
       puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
@@ -77,7 +77,7 @@ module ValeraQuest
       when 1
 
         case
-        when 0..event_size
+        when 0..engine.event_list.size
           engine_doom event
         else
           puts 'Input event error!'

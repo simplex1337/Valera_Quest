@@ -79,7 +79,7 @@ module ValeraQuest
       
       case
         when 1
-          
+           
           case
             when 0..event_size
               engine_doom event

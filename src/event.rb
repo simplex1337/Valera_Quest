@@ -8,7 +8,6 @@ class Event
   end
 
   def apply(human)
-    puts @description
     @baffs.each do |stat, value|
       human.send(stat + '=', value)
     end

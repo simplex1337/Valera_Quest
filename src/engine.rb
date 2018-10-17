@@ -1,14 +1,17 @@
 require 'yaml'
-require 'event.rb'
-require 'valera.rb'
+require 'event'
+require 'valera'
 
 module ValeraQuest
   class Engine
     attr_reader :events, :valerra
 
-    def initialize
-      load_events '../conf/conf.yml'
+    def initialize(path='../conf/conf.yml')
+      @events = nil
       @valerra = Valera.new
+      if File.exist? path then
+        load_events path
+      end
     end
 
     def load_events(file)
@@ -30,12 +33,7 @@ module ValeraQuest
     end
 
     def valeras_doom(number)
-      if number >= events.size then
-        raise 'We dont have ascing event'
-      end
-      p self.valerra.get_full_stat
       self.events.at(number).apply(@valerra)
-      p self.valerra.get_full_stat
     end
 
     def save_valera_state(file='./valera.yml')

@@ -66,36 +66,39 @@ module ValeraQuest
     def game
       puts valera.get_full_stat    
       spisok = engine.event_list
-      for i in 0..engine.event_list.size
-        puts "#{i}  -  #{spisok[i]}"
-      end
-
-      puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
-      event = gets.chomp.to_i 
-
-      case
-      when 1
-
-        case
-        when 0..engine.event_list.size
-          engine_doom event
-        else
-          puts 'Input event error!'
+      loop {
+        for i in 0..engine.event_list.size - 1
+          puts "#{i}  -  #{spisok[i]}"
         end
 
-      when 2
-        puts 'Save the game - 1'
-        puts 'Exit game - 2'
-        save_exit = gets.chomp.to_i
+        puts 'Сhoice of action  (1 - Vent selection | 2 - Save or exit game)'
+        event = gets.chomp.to_i 
 
         case
-        when '1'
-          save_game
-        when '2'
-          exit_game
+        when 1
+
+          case
+          when 0..engine.event_list.size - 1 
+            engine_doom event
+          else
+            puts 'Input event error!'
+          end
+
+        when 2
+          puts 'Save the game - 1'
+          puts 'Exit game - 2'
+          save_exit = gets.chomp.to_i
+
+          case
+          when '1'
+            save_game
+          when '2'
+            exit_game
+          end
+
         end
 
-      end
+      }
 
     end
 

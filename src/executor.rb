@@ -18,15 +18,19 @@ module ValeraQuest
 
         case rez_menu
           when 1
+            system('reset')
             new_game
           when 2
+            system('reset')
             load_game
           when 3
+            system('reset')
             exit_game
           else
             puts 'Input error!'
         end
       }    
+      
     end
 
     def engine_doom(number)
@@ -50,6 +54,7 @@ module ValeraQuest
     end
 
     def exit_game
+        system('reset')
         abort 'Good bye!'
     end
 
@@ -69,6 +74,7 @@ module ValeraQuest
           case action
             when /^[0-9]+/
               engine_doom action.to_i
+              system('reset')
               puts self.engine.valera.get_full_stat
 
             when 's'
@@ -86,7 +92,7 @@ module ValeraQuest
             puts "Valera dead!"
             menu
           end
-
+          
       }
 
     end

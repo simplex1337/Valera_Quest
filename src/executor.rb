@@ -1,6 +1,10 @@
 class Executor 
 	attr_reader :engine 
 	
+	def initialize
+		@engine = Engine.new
+	end
+	
 	def menu
 		puts '1 - New Game'
 		puts '2 - Load Game'
@@ -23,12 +27,10 @@ class Executor
 	
 	def new_game
 		puts 'New Game'
-		@engine = Engine.new
 		engine.initialize
 	end
 	
 	def load_game
-		@engine = Engine.new
 		engine.load_valera_state
 	end
 	
@@ -39,11 +41,10 @@ class Executor
 				
 		case exit_rez
 			when 1
-				@engine = Engine.new
 				engine.save_valera_state
 				
 			when 2
-				exit 'God bay!'
+				exit 'Good bay!'
 		end
 			
 	end

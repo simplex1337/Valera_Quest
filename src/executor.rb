@@ -21,6 +21,9 @@ class Executor
 			
 			when 3
 				exit_game
+				
+			else
+				puts 'Input error!'
 		end
 			
 	end
@@ -45,6 +48,9 @@ class Executor
 				
 			when 2
 				exit 'Good bay!'
+				
+			else
+				puts 'Input error!'
 		end
 			
 	end

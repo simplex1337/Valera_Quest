@@ -71,9 +71,11 @@ module ValeraQuest
       puts self.valera.get_full_stat
       puts 'Select event:'
       event = gets.chomp.to_i      
+      
       for i in 0..event.size
         puts i ' - ' event_list.list[i]
       end
+      
       puts 'Save the game - s'
       puts 'Exit game - e'
       rez_menu = gets.chomp.to_S

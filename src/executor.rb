@@ -18,15 +18,16 @@ module ValeraQuest
 
         case rez_menu
           when 1
-            system('reset')
+            system 'clear'
             new_game
           when 2
-            system('reset')
+            ssystem 'clear'
             load_game
           when 3
-            system('reset')
+            system 'clear'
             exit_game
           else
+            system 'clear'
             puts 'Input error!'
         end
       }    
@@ -45,16 +46,18 @@ module ValeraQuest
     end
 
     def load_game
+      system 'clear'
       self.engine.load_valera_state
       game
     end
 
     def save_game
+      system 'clear'
       self.engine.save_valera_state
     end
 
     def exit_game
-        system('reset')
+        system 'clear'
         abort 'Good bye!'
     end
 
@@ -74,7 +77,7 @@ module ValeraQuest
           case action
             when /^[0-9]+/
               engine_doom action.to_i
-              system('reset')
+              system 'clear'
               puts self.engine.valera.get_full_stat
 
             when 's'
@@ -84,6 +87,7 @@ module ValeraQuest
               exit_game
                 
             else
+              system 'clear'
               puts 'Input event error!'  
         
            end

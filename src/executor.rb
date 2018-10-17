@@ -6,7 +6,6 @@ module ValeraQuest
 
     def initialize
       @engine = Engine.new
-      @valera = Valera.new
       menu
     end
 
@@ -45,7 +44,7 @@ module ValeraQuest
     end
 
     def save_game
-      self.save_valera_state
+      self.engine.save_valera_state
     end
 
     def exit_game
@@ -53,7 +52,7 @@ module ValeraQuest
     end
 
     def game
-      puts self.valera.get_full_stat    
+      puts self.engine.valera.get_full_stat    
       spisok = engine.event_list
       loop {
         for i in 0..engine.event_list.size - 1
@@ -75,7 +74,7 @@ module ValeraQuest
             exit_game
             
           when 'v'
-			puts self.valera.get_full_stat
+			puts self.engine.valera.get_full_stat
             
           else
             puts 'Input event error!'  

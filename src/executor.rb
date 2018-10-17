@@ -32,7 +32,7 @@ module ValeraQuest
       if number >= engine.event_list.size then
         raise 'We dont have ascing event'
       end
-      engine.valeras_doom(number)
+      self.engine.valeras_doom(number)
     end
 
     def new_game
@@ -41,7 +41,7 @@ module ValeraQuest
 
     def load_game
       self.engine.load_valera_state
-      game
+      gamend
     end
 
     def save_game
@@ -53,7 +53,7 @@ module ValeraQuest
     end
 
     def game
-      puts valera.get_full_stat    
+      puts self.valera.get_full_stat    
       spisok = engine.event_list
       loop {
         for i in 0..engine.event_list.size - 1
@@ -75,7 +75,7 @@ module ValeraQuest
             exit_game
             
           when 'v'
-			puts valera.get_full_stat
+			puts self.valera.get_full_stat
             
           else
             puts 'Input event error!'  

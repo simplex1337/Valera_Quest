@@ -53,7 +53,7 @@ module ValeraQuest
             "fatigue" => self.fatigue] 
     end
 
-    def isdead?
+    def is_dead?
       if (self.hp <= 0 || self.happiness <= -10)
         return true
       else

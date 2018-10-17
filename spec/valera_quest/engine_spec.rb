@@ -28,7 +28,11 @@ describe ValeraQuest::Engine do
       end
 
       it 'key is Valeras parameter, value is relative value' do
-        expect unit.events.at(0) == {'hp'=>1}
+        expect(unit.events.at(0).baffs).to be == {'hp'=>1}
+      end
+
+      it 'adds to class Event description' do
+        expect(unit.events.at(0).description).to be == "test event"
       end
 
     end
@@ -43,7 +47,7 @@ describe ValeraQuest::Engine do
       end
 
       it 'element of array is String' do
-        expect event_list[0] == 'test event'
+        expect(event_list[0]).to be == 'test event'
       end
 
     end
@@ -54,7 +58,7 @@ describe ValeraQuest::Engine do
       it 'dooming Valera' do
         unit.valerra.hp = -2 #value is relative
         unit.valeras_doom(0)
-        expect unit.valerra.hp == 1
+        expect(unit.valerra.hp).to be == 99
       end
     end
   end
@@ -77,11 +81,11 @@ describe ValeraQuest::Engine do
     context 'method to load Valera state' do
       it 'loads state from YAML file' do
         unit.load_valera_state
-        expect unit.valerra.hp == 8
+        expect(unit.valerra.hp).to be == 99
       end
       it 'path to load can be customized to' do
-        unit.load_valera_state
-        expect unit.valerra.hp == 9
+        unit.load_valera_state './anton.yml'
+        expect(unit.valerra.hp).to be == 100
       end
     end
   end

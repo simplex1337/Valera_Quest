@@ -42,6 +42,7 @@ module ValeraQuest
     end
 
     def load_valera_state(file='./valera.yml')
+      @valera = Valera.new
       states = YAML.load_file file
       states.each do |stat, value|
         curr_value = @valerra.send(stat)

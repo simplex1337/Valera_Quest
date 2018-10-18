@@ -6,11 +6,11 @@ module ValeraQuest
 
     def initialize
       @engine = Engine.new
+      system 'clear'
       menu
     end
 
     def menu
-      system 'clear'
       loop {
         puts '  ___ ___       __                  _______                   __   '
         puts ' |   Y   .---.-|  .-----.----.---.-|   _   .--.--.-----.-----|  |_ '
@@ -31,7 +31,7 @@ module ValeraQuest
             system 'clear'
             new_game
           when 2
-            ssystem 'clear'
+            system 'clear'
             load_game
           when 3
             system 'clear'
